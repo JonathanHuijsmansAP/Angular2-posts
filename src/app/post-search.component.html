@@ -1,0 +1,23 @@
+<div class = 'container'>
+   <h1>Search Post</h1>
+
+   <form (ngSubmit)='onSubmit()'>
+
+      <div class = 'form-group' [formGroup]='search'>
+         <label for = 'name'>Name :</label>
+         <input type = 'text' formControlName='name'>
+      </div>
+      <br />
+      <button type='submit' class='btn btn-success'>Search</button>
+
+   </form>
+   <br /><br />
+
+   <li *ngFor='let comment of comments;' (click)='searchComments(i)'>
+		<label>Name :&nbsp;</label>{{ result_name }}<br />
+		<label>Email :&nbsp;</label>{{ result_email }}<br />
+		<label>Body :&nbsp;</label>{{ result_body }}
+	</li>
+   
+
+</div>

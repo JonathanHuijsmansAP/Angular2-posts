@@ -13,7 +13,10 @@ export class PostListComponent  {
 
    ngOnInit(): void {}
 
-   getComments(index: number): void {}
+   getComments(index: number): void {
+	let url = `http://jsonplaceholder.typicode.com/posts/`;
+    return JSON.parse(this.http.get<Product[]>(url))[index];
+   }
 
    printComments(comments: Comment[]): void {}
 }
